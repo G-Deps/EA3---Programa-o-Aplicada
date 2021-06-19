@@ -3,6 +3,14 @@
 
 using namespace std;
 
+void modulotambem(tComplexos A){
+    int opcao;
+    cout<< "Mostrar em formato de modulo tambem? 1 para sim e 2 para nao\n";
+    cin >>opcao;
+    if(opcao == 1)
+    cout<<"Modulo de "<<A.Modulo()<<endl;
+}
+
 int main(){
     int  quant,modo,continuar[3] = {1,0,0};
     tComplexos N[2];
@@ -18,24 +26,29 @@ int main(){
         }
         continuar[1] = 1; 
         while(continuar[1] == 1){
-            cout<<"Selecione a funcao desejada: \n 1 = Soma \n 2 = Subtracao \n 3 = Multiplicacao \n 4 = Divisao\n 5 = Módulo\n";
+            cout<<"Selecione a funcao desejada: \n 1 = Soma \n 2 = Subtracao \n 3 = Multiplicacao \n 4 = Divisao\n 5 = Modulo\n Opcao selecionada: ";
             cin >> modo;
             switch (modo)
             {
+                tComplexos contas;
             case (1):{
-                N[0].Soma(N[1]);
+                contas = N[0].Soma(N[1]);
+                modulotambem(contas);
                 break;
             }
             case (2):{
-                N[0].Subtracao(N[1]);
+                contas = N[0].Subtracao(N[1]);
+                modulotambem(contas);
                 break;
             }
             case (3):{
-                N[0].Multiplicacao(N[1]);
+                contas = N[0].Multiplicacao(N[1]);
+                modulotambem(contas);
                 break;
             }
             case (4):{
-                N[0].Divisao(N[1]);
+                contas = N[0].Divisao(N[1]);
+                modulotambem(contas);
                 break;
             }
             case (5):{
@@ -63,7 +76,7 @@ int main(){
                 break;
             }
 
-            cout << "Deseja novamente? 1 para outra operação, 2 para novos valores e 3 para sair\n";
+            cout << "Deseja novamente? 1 para outra operacao, 2 para novos valores e 3 para sair\n";
             cin>> continuar[2];
             if(continuar[2] == 1){
              continuar[0] = 1;

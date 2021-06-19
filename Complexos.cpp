@@ -1,6 +1,5 @@
 #include<iostream>
 #include<math.h>
-#include<string>
 using namespace std;
 
 struct tComplexos
@@ -11,7 +10,11 @@ struct tComplexos
         return (sqrt(pow(Real,2)+pow(Imaginario,2)));
     }
     void display(){
-        cout << Real << " + " << Imaginario << "i\n";
+        if(Imaginario>0)
+            cout <<"Numero Inputado: "<< Real << "+" << Imaginario << "i\n";
+        else{
+            cout << Real << Imaginario << "i\n";
+        }
     } 
     tComplexos Soma (tComplexos B){
         tComplexos Sum;
