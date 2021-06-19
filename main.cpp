@@ -26,29 +26,45 @@ int main(){
         }
         continuar[1] = 1; 
         while(continuar[1] == 1){
-            cout<<"Selecione a funcao desejada: \n 1 = Soma \n 2 = Subtracao \n 3 = Multiplicacao \n 4 = Divisao\n 5 = Modulo\n Opcao selecionada: ";
+            cout<<"Selecione a operacao desejada: \n 1 = Soma \n 2 = Subtracao \n 3 = Multiplicacao \n 4 = Divisao\n 5 = Modulo\n Opcao selecionada: ";
             cin >> modo;
             switch (modo)
             {
                 tComplexos contas;
             case (1):{
+                if(quant == 2){
                 contas = N[0].Soma(N[1]);
                 modulotambem(contas);
+                }else{
+                    cout<<"Quantidade de Numeros complexos menor que 2! \n";
+                }
                 break;
             }
             case (2):{
+                if(quant == 2){
                 contas = N[0].Subtracao(N[1]);
                 modulotambem(contas);
+                }else{
+                    cout<<"Quantidade de Numeros complexos menor que 2! \n";
+                }
                 break;
             }
             case (3):{
+                if(quant == 2){
                 contas = N[0].Multiplicacao(N[1]);
                 modulotambem(contas);
+                }else{
+                    cout<<"Quantidade de Numeros complexos menor que 2! \n";
+                }
                 break;
             }
             case (4):{
+                if(quant == 2){
                 contas = N[0].Divisao(N[1]);
                 modulotambem(contas);
+                }else{
+                    cout<<"Quantidade de Numeros complexos menor que 2! \n";
+                }
                 break;
             }
             case (5):{
@@ -57,16 +73,16 @@ int main(){
                 int outro;
                 cout << "Deseja o modulo de qual numero? 1 ou 2\n";
                 cin >> Num;
-                cout<< N[Num-1].Modulo()<< endl;
+                cout<< "Modulo de "<< N[Num-1].Modulo()<< endl;
                 cout << "Deseja o modulo do outro numero? 1 para sim e 2 para nao\n";
                 cin >> outro;
                 if(outro == 1){
-                 cout << N[2-Num].Modulo() <<endl;
+                 cout << "Modulo de "<< N[2-Num].Modulo() <<endl;
                 }else{
                     Num = 5;
                 }
                 }else{
-                 cout<< N[0].Modulo()<<endl;
+                 cout<< "Modulo de "<< N[0].Modulo()<<endl;
                 }
                 break;
             }
